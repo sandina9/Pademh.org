@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PADEMH - Parti Démocrate Haïtien | Unité · Paix · Progrès</title>
+    <meta name="description" content="Parti Démocrate Haïtien - Building a stronger Haiti through unity, peace, and progress.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --gold: #D4AF37;
+            --green: #1B5E20;
+            --earth: #6D4C41;
+            --cream: #FFF8E7;
+            --white: #FFFFFF;
+            --dark: #1a1a1a;
+            --gray: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-text {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--green);
+        }
+        
+        .slogan {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--green);
+            background: transparent;
+            color: var(--green);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+        
+        .lang-btn.active {
+            background: var(--green);
+            color: var(--white);
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 90vh;
+            background: linear-gradient(135deg, var(--green) 0%, var(--earth) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.1;
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.15; }
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 1;
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-slogan {
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-tag {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            margin: 2rem 0;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+        
+        .about-values {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .value-card {
+            padding: 2rem;
+            background: var(--cream);
+            border-left: 4px solid var(--gold);
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .value-icon {
+            font-size: 2rem;
+        }
+        
+        .value-card h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Platform Section */
+        .platform {
+            background: var(--cream);
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .platform-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .platform-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+        
+        /* Leadership Section */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .leader-card {
+            text-align: center;
+        }
+        
+        .leader-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--green));
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+        
+        .leader-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .leader-title {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--green);
+            color: var(--white);
+        }
+        
+        .contact .section-title {
+            color: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gold);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 4px;
+            font-family: 'Work Sans', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* Language Toggle */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="PADEMH Logo" style="width: 60px; height: 60px; margin-right: 0.5rem;">
+                <div>
+                    <div class="logo-text">PADEMH</div>
+                    <div class="slogan">Unité · Paix · Progrès</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about" data-nav="about">Ki Moun Nou Ye</a></li>
+                <li><a href="#platform" data-nav="platform">Platfòm</a></li>
+                <li><a href="#leadership" data-nav="leadership">Ekip</a></li>
+                <li><a href="#contact" data-nav="contact">Kontakte Nou</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang-btn="ht">Kreyòl</button>
+                <button class="lang-btn" data-lang-btn="fr">Français</button>
+                <button class="lang-btn" data-lang-btn="en">English</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section - HAITIAN CREOLE -->
+    <div data-lang="ht" class="active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ayiti Merite Plis</h1>
+                <div class="hero-slogan">Inite · Lapè · Pwogrè</div>
+                <p>Nou se yon pati demokrat ki bati sou konfyans, transparans, ak angajman pou sèvi tout Ayisyen.</p>
+                <a href="#contact" class="cta-button">Vin Patisipe</a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="section-tag">Ki Moun PADEMH Ye</p>
+                    <h2 class="section-title">Rasin <em>Solid,</em> Vizyòn Klè</h2>
+                    <div class="section-divider"></div>
+                    <p>Pati Demokrat Ayisyen (PADEMH) se yon pati sant gòch ki fèt nan konviksyon ke chak Ayisyen merite yon Eta ki travay pou yo, pa kont yo. Rasin nou pwofon tankou pye mapou nan anblem nou an, epi angajman nou pou demokrasi se yon bagay absoli.</p>
+                    <p>Bati sou valè inite, lapè, ak pwogrè, PADEMH rasanble sitwayen ki soti nan tout milye sosyal ki kwè ke Ayiti kapab epi dwe reklaime diyite l, estabilite l, ak souverènte l.</p>
+                    <p>Nou travay pou relèvman moral ak byennèt pèp ayisyen an, nan etabli yon pouvwa onèt ki baze sou jistis sosyal ak respè dwa moun.</p>
+                    <p>Nou angaje nan goumen kont koripsyon, ranfòse enstitisyon piblik yo, epi kreye kondisyon pou kwasans ekonomik enkli ki benefisye tout Ayisyen, depi nan andeyò rive nan vil yo.</p>
+                </div>
+                <div class="about-values">
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <div>
+                            <h4>Inite Nasyonal</h4>
+                            <p>Nou kwè nan fòs pèp ayisyen inifi, pi lwen divizyon rejyonal, politik ak sosyal.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚖️</div>
+                        <div>
+                            <h4>Jistis ak Transparans</h4>
+                            <p>Yon gouvènman jis pa kache anyen. Nou defann transparans nan jesyon resous piblik yo.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <div>
+                            <h4>Pwogrè Dirab</h4>
+                            <p>Devlopman vrè a anrasinen nan edikasyon, sante ak enstitisyon solid yo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform -->
+        <section id="platform" class="platform">
+            <p class="section-tag">Pwogram Nou</p>
+            <h2 class="section-title">Platfòm Politik PADEMH</h2>
+            <div class="section-divider"></div>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">🏛️</div>
+                    <h3>Gouvènans Responsab</h3>
+                    <p>Ranfòse enstitisyon demokratik yo, goumen kont koripsyon, epi rann sistèm jistis la endepandan ak efikas.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">📚</div>
+                    <h3>Edikasyon pou Tout Moun</h3>
+                    <p>Garanti aksè inivèsèl a yon edikasyon kalite, refòme sistèm edikatif la, epi sipòte anseyan yo.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">💼</div>
+                    <h3>Kwasans Ekonomik Enkli</h3>
+                    <p>Kreye opòtinite travay, sipòte ti ak mwayen antrepriz, epi devlope enfrastrikti pou konekte peyi a.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🏥</div>
+                    <h3>Sante pou Tout Moun</h3>
+                    <p>Amelyore sistèm sante piblik la, asire aksè ak swen kalite, epi pwoteje dwa pasyan yo.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🌾</div>
+                    <h3>Devlopman Agrikòl</h3>
+                    <p>Revitalize sektè agrikòl la, sipòte plantè yo, epi asire sekirite alimantè.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🔒</div>
+                    <h3>Sekirite ak Lapè</h3>
+                    <p>Retabli lòd piblik la, refòme lapolis, epi pwoteje tout sitwayen san diskriminasyon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section id="leadership">
+            <p class="section-tag">Ekip Nou</p>
+            <h2 class="section-title">Lidèchip PADEMH</h2>
+            <div class="section-divider"></div>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Jean Jacques Clark Parent</h3>
+                    <p class="leader-title">Fondatè ak Prezidan</p>
+                    <p>Direksyon estratejik ak reprezantasyon enstitisyonèl pati a.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Claire Lydie Parent</h3>
+                    <p class="leader-title">Vis Prezidan</p>
+                    <p>Asistans ak sipò nan direksyon jeneral pati a.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Sandina Parent</h3>
+                    <p class="leader-title">Sekretè</p>
+                    <p>Kòdinasyon operasyonèl, jestyon dokiman ak kominikasyon.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Carlos Joseph</h3>
+                    <p class="leader-title">Sekretè Adjwen</p>
+                    <p>Sipò sekretarya jeneral la ak jestyon dosye.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Eng. Eric Clac Louis</h3>
+                    <p class="leader-title">Kestè</p>
+                    <p>Responsab jesyon finans ak resous pati a.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <p class="section-tag">Kontakte Nou</p>
+            <h2 class="section-title">Vin Patisipe nan Chanjman an</h2>
+            <div class="section-divider"></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@pademh.org<br>contact@pademh.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Adrès</h4>
+                            <p>4 Ri Canova Parent<br>Wout Malrik, Petyonvil<br>Ayiti</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Telefòn</h4>
+                            <p>+509 3775-9653<br>+509 3946-3912<br>+509 4393-9918</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Non ou" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email ou" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mesaj ou" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Voye Mesaj</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Hero Section - FRENCH -->
+    <div data-lang="fr">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Haïti Mérite Plus</h1>
+                <div class="hero-slogan">Unité · Paix · Progrès</div>
+                <p>Nous sommes un parti démocrate bâti sur la confiance, la transparence et l'engagement à servir tous les Haïtiens.</p>
+                <a href="#contact" class="cta-button">Rejoignez-Nous</a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="section-tag">À Propos de PADEMH</p>
+                    <h2 class="section-title">Racines <em>Profondes,</em> Vision Claire</h2>
+                    <div class="section-divider"></div>
+                    <p>Le Parti Démocrate Haïtien (PADEMH) est un parti de centre-gauche né de la conviction que chaque Haïtien mérite un État qui travaille pour lui, et non contre lui. Nos racines sont aussi profondes que le mapou dans notre emblème, et notre engagement envers la démocratie est absolu.</p>
+                    <p>Construit sur les valeurs d'unité, de paix et de progrès, PADEMH rassemble des citoyens de tous horizons qui croient qu'Haïti peut et doit reconquérir sa dignité, sa stabilité et sa souveraineté.</p>
+                    <p>Nous travaillons pour le relèvement moral et le bien-être du peuple haïtien, en établissant un pouvoir honnête fondé sur la justice sociale et le respect des droits de la personne.</p>
+                    <p>Nous nous engageons à lutter contre la corruption, à renforcer les institutions publiques et à créer les conditions d'une croissance économique inclusive qui profite à tous les Haïtiens, des campagnes aux villes.</p>
+                </div>
+                <div class="about-values">
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <div>
+                            <h4>Unité Nationale</h4>
+                            <p>Nous croyons en la force du peuple haïtien uni, au-delà des divisions régionales, politiques et sociales.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚖️</div>
+                        <div>
+                            <h4>Justice et Transparence</h4>
+                            <p>Un gouvernement juste ne cache rien. Nous défendons la transparence dans la gestion des ressources publiques.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <div>
+                            <h4>Progrès Durable</h4>
+                            <p>Le vrai développement est enraciné dans l'éducation, la santé et des institutions solides.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform -->
+        <section id="platform" class="platform">
+            <p class="section-tag">Notre Programme</p>
+            <h2 class="section-title">Plateforme Politique PADEMH</h2>
+            <div class="section-divider"></div>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">🏛️</div>
+                    <h3>Gouvernance Responsable</h3>
+                    <p>Renforcer les institutions démocratiques, combattre la corruption et rendre le système judiciaire indépendant et efficace.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">📚</div>
+                    <h3>Éducation pour Tous</h3>
+                    <p>Garantir l'accès universel à une éducation de qualité, réformer le système éducatif et soutenir les enseignants.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">💼</div>
+                    <h3>Croissance Économique Inclusive</h3>
+                    <p>Créer des opportunités d'emploi, soutenir les petites et moyennes entreprises et développer les infrastructures pour connecter le pays.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🏥</div>
+                    <h3>Santé pour Tous</h3>
+                    <p>Améliorer le système de santé publique, assurer l'accès aux soins de qualité et protéger les droits des patients.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🌾</div>
+                    <h3>Développement Agricole</h3>
+                    <p>Revitaliser le secteur agricole, soutenir les agriculteurs et assurer la sécurité alimentaire.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🔒</div>
+                    <h3>Sécurité et Paix</h3>
+                    <p>Rétablir l'ordre public, réformer la police et protéger tous les citoyens sans discrimination.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section id="leadership">
+            <p class="section-tag">Notre Équipe</p>
+            <h2 class="section-title">Direction PADEMH</h2>
+            <div class="section-divider"></div>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Jean Jacques Clark Parent</h3>
+                    <p class="leader-title">Fondateur et Président</p>
+                    <p>Direction stratégique et représentation institutionnelle du parti.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Claire Lydie Parent</h3>
+                    <p class="leader-title">Vice-Présidente</p>
+                    <p>Assistance et soutien à la direction générale du parti.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Sandina Parent</h3>
+                    <p class="leader-title">Secrétaire</p>
+                    <p>Coordination opérationnelle, gestion documentaire et communication.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Carlos Joseph</h3>
+                    <p class="leader-title">Secrétaire Adjoint</p>
+                    <p>Support au secrétariat général et gestion des dossiers.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Ing. Eric Clac Louis</h3>
+                    <p class="leader-title">Questeur</p>
+                    <p>Responsable de la gestion financière et des ressources du parti.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <p class="section-tag">Contactez-Nous</p>
+            <h2 class="section-title">Participez au Changement</h2>
+            <div class="section-divider"></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@pademh.org<br>contact@pademh.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>4 Rue Canova Parent<br>Route de Marlique, Pétion-Ville<br>Haïti</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+509 3775-9653<br>+509 3946-3912<br>+509 4393-9918</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer le Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Hero Section - ENGLISH -->
+    <div data-lang="en">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Haiti Deserves Better</h1>
+                <div class="hero-slogan">Unity · Peace · Progress</div>
+                <p>We are a democratic party built on trust, transparency, and commitment to serve all Haitians.</p>
+                <a href="#contact" class="cta-button">Join Us</a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="section-tag">About PADEMH</p>
+                    <h2 class="section-title">Deep <em>Roots,</em> Clear Vision</h2>
+                    <div class="section-divider"></div>
+                    <p>The Haitian Democratic Party (PADEMH) is a center-left party born from the conviction that every Haitian deserves a State that works for them, not against them. Our roots run as deep as the mapou tree in our emblem, and our commitment to democracy is absolute.</p>
+                    <p>Built on the values of unity, peace, and progress, PADEMH brings together citizens from all walks of life who believe that Haiti can and must reclaim its dignity, stability, and sovereignty.</p>
+                    <p>We work for the moral uplift and well-being of the Haitian people, establishing honest governance based on social justice and respect for human rights.</p>
+                    <p>We are committed to fighting corruption, strengthening public institutions, and creating the conditions for inclusive economic growth that benefits all Haitians, from the countryside to the cities.</p>
+                </div>
+                <div class="about-values">
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <div>
+                            <h4>National Unity</h4>
+                            <p>We believe in the strength of the Haitian people united, beyond regional, political, and social divisions.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚖️</div>
+                        <div>
+                            <h4>Justice & Transparency</h4>
+                            <p>A just government hides nothing. We defend transparency in the management of public resources.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <div>
+                            <h4>Sustainable Progress</h4>
+                            <p>True development is rooted in education, health, and strong institutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform -->
+        <section id="platform" class="platform">
+            <p class="section-tag">Our Program</p>
+            <h2 class="section-title">PADEMH Political Platform</h2>
+            <div class="section-divider"></div>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">🏛️</div>
+                    <h3>Responsible Governance</h3>
+                    <p>Strengthen democratic institutions, fight corruption, and make the justice system independent and effective.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">📚</div>
+                    <h3>Education for All</h3>
+                    <p>Guarantee universal access to quality education, reform the education system, and support teachers.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">💼</div>
+                    <h3>Inclusive Economic Growth</h3>
+                    <p>Create job opportunities, support small and medium enterprises, and develop infrastructure to connect the country.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🏥</div>
+                    <h3>Healthcare for All</h3>
+                    <p>Improve the public health system, ensure access to quality care, and protect patient rights.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🌾</div>
+                    <h3>Agricultural Development</h3>
+                    <p>Revitalize the agricultural sector, support farmers, and ensure food security.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">🔒</div>
+                    <h3>Security and Peace</h3>
+                    <p>Restore public order, reform the police, and protect all citizens without discrimination.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section id="leadership">
+            <p class="section-tag">Our Team</p>
+            <h2 class="section-title">PADEMH Leadership</h2>
+            <div class="section-divider"></div>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Jean Jacques Clark Parent</h3>
+                    <p class="leader-title">Founder and President</p>
+                    <p>Strategic direction and institutional representation of the party.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Claire Lydie Parent</h3>
+                    <p class="leader-title">Vice President</p>
+                    <p>Assistance and support to the general direction of the party.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Sandina Parent</h3>
+                    <p class="leader-title">Secretary</p>
+                    <p>Operational coordination, document management, and communication.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Carlos Joseph</h3>
+                    <p class="leader-title">Assistant Secretary</p>
+                    <p>Support to the general secretariat and file management.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">👤</div>
+                    <h3>Eng. Eric Clac Louis</h3>
+                    <p class="leader-title">Treasurer</p>
+                    <p>Responsible for financial management and party resources.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <p class="section-tag">Contact Us</p>
+            <h2 class="section-title">Join the Change</h2>
+            <div class="section-divider"></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@pademh.org<br>contact@pademh.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>4 Canova Parent Street<br>Marlique Road, Pétion-Ville<br>Haiti</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+509 3775-9653<br>+509 3946-3912<br>+509 4393-9918</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 PADEMH - Parti Démocrate Haïtien. Tout dwa rezève.</p>
+        <p>Unité · Paix · Progrès</p>
+    </footer>
+
+    <script>
+        // Language Switcher
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const langSections = document.querySelectorAll('[data-lang]');
+        
+        const navTexts = {
+            ht: {
+                about: 'Ki Moun Nou Ye',
+                platform: 'Platfòm',
+                leadership: 'Ekip',
+                contact: 'Kontakte Nou'
+            },
+            fr: {
+                about: 'À Propos',
+                platform: 'Plateforme',
+                leadership: 'Direction',
+                contact: 'Contact'
+            },
+            en: {
+                about: 'About',
+                platform: 'Platform',
+                leadership: 'Leadership',
+                contact: 'Contact'
+            }
+        };
+        
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.langBtn;
+                
+                // Update active button
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update active section
+                langSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.dataset.lang === lang) {
+                        section.classList.add('active');
+                    }
+                });
+                
+                // Update navigation text
+                document.querySelectorAll('[data-nav]').forEach(link => {
+                    const navKey = link.dataset.nav;
+                    link.textContent = navTexts[lang][navKey];
+                });
+            });
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Form submission
+        document.querySelectorAll('.contact-form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Mèsi! Mesaj ou resevwa. Nou ap kontakte w byento.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PADEMH - Parti Démocrate Haïtien | Unité · Paix · Progrès</title>
+    <meta name="description" content="Parti Démocrate Haïtien - Building a stronger Haiti through unity, peace, and progress.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;700&display=swap');
+        
+        :root {
+            --gold: #D4AF37;
+            --green: #1B5E20;
+            --earth: #6D4C41;
+            --cream: #FFF8E7;
+            --white: #FFFFFF;
+            --dark: #1a1a1a;
+            --gray: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--cream);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--green) 0%, var(--earth) 100%);
+            color: var(--cream);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+        
+        .brand h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .brand p {
+            font-size: 0.9rem;
+            color: var(--cream);
+            font-style: italic;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--gold);
+            color: var(--cream);
+            padding: 0.3rem 0.8rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(109, 76, 65, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231B5E20" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--cream);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--green);
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .platform-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .platform-card h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .leadership {
+            background: var(--white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--cream);
+            border-radius: 12px;
+        }
+        
+        .team-card h4 {
+            color: var(--green);
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .team-card p {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: var(--cream);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .platform-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo-section">
+                    <img src="pademh-logo.png" alt="PADEMH Logo" class="logo">
+                    <div class="brand">
+                        <h1>PADEMH</h1>
+                        <p>Unité · Paix · Progrès</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-home">Akèy</a></li>
+                    <li><a href="#about" class="nav-about">Konsènan</a></li>
+                    <li><a href="#platform" class="nav-platform">Platfòm</a></li>
+                    <li><a href="#leadership" class="nav-leadership">Dirijan</a></li>
+                    <li><a href="#contact" class="nav-contact">Kontak</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="switchLang('ht')">Kreyòl</button>
+                    <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+                    <button class="lang-btn" onclick="switchLang('en')">English</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- KREYÒL VERSION -->
+        <div class="lang-content active" id="content-ht">
+            <section class="hero" id="home">
+                <div class="container">
+                    <h2>Ansanm pou yon Ayiti pi fò</h2>
+                    <p>Bati yon nasyon pi jis, pi pwospè, pi solid atravè inite, lapè, ak pwogrè</p>
+                    <a href="#contact" class="cta-button">Antre nan Mouvman an</a>
+                </div>
+            </section>
+
+            <section class="section" id="about">
+                <div class="container">
+                    <h2 class="section-title">Konsènan PADEMH</h2>
+                    <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+                        Parti Démocrate Haïtien (PADEMH) se yon pati politik ki gen anrasinnman nan sant-gòch, 
+                        angaje nan relèvman moral ak byennèt pèp ayisyen an. Nou kwè nan yon Ayiti kote chak 
+                        sitwayen gen aksè a edikasyon, swen sante, travay, ak jistis.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section" id="platform">
+                <div class="container">
+                    <h2 class="section-title">Platfòm Politik Nou</h2>
+                    <div class="platform-grid">
+                        <div class="platform-card">
+                            <h3>Edikasyon pou Tout</h3>
+                            <p>Yon sistèm edikasyon piblik solid, gratis, ak aksesib pou tout timoun ayisyen.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Swen Sante Inivèsèl</h3>
+                            <p>Aksè a swen sante kalite, abòdab, ak disponib nan tout kwen peyi a.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Devlopman Ekonomik</h3>
+                            <p>Kreye travay, sipòte antreprenè lokal, devlope agrikilti ak endustri nasyonal.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Jistis ak Sekirite</h3>
+                            <p>Yon sistèm jistis endepandan, transparan, ak yon fòs sekirite respekte dwa moun.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Anviwònman Dirab</h3>
+                            <p>Pwoteje richès natirèl Ayiti, konbat dewokazyon, pwomote enèji pwòp.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Lapè ak Inite</h3>
+                            <p>Konstwi yon sosyete kote tout Ayisyen ka viv ansanm nan respè ak diyite.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section leadership" id="leadership">
+                <div class="container">
+                    <h2 class="section-title">Ekip Direktè Nou</h2>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <h4>Jean Jacques Clark Parent</h4>
+                            <p>Fondatè ak Prezidan</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Claire Lydie Parent</h4>
+                            <p>Vice-Prezidant</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Sandina Parent</h4>
+                            <p>Sekretè</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Carlos Joseph</h4>
+                            <p>Sekretè Adjwen</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Eng. Eric Clac Louis</h4>
+                            <p>Kestè</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contact">
+                <div class="container">
+                    <h2 class="section-title">Kontakte Nou</h2>
+                    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                            Nou vle tande opinyon ou. Rantre nan mouvman an jodi a!
+                        </p>
+                        <p><strong>Adrès:</strong><br>
+                        4 Rue Canova Parent, Route de Marlique<br>
+                        Pétion-Ville, Ayiti</p>
+                        <p style="margin-top: 1rem;">
+                            <strong>Telefòn:</strong><br>
+                            +509 3775-9653 | +509 3946-3912 | +509 4393-9918
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            <strong>Imèl:</strong><br>
+                            <a href="mailto:info@pademh.org" style="color: var(--gold);">info@pademh.org</a><br>
+                            <a href="mailto:contact@pademh.org" style="color: var(--gold);">contact@pademh.org</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- FRANÇAIS VERSION -->
+        <div class="lang-content" id="content-fr">
+            <section class="hero">
+                <div class="container">
+                    <h2>Ensemble pour une Haïti plus forte</h2>
+                    <p>Bâtir une nation plus juste, prospère et solidaire à travers l'unité, la paix et le progrès</p>
+                    <a href="#contact" class="cta-button">Rejoignez le Mouvement</a>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">À propos de PADEMH</h2>
+                    <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+                        Le Parti Démocrate Haïtien (PADEMH) est un parti politique de centre-gauche engagé dans 
+                        le relèvement moral et le bien-être du peuple haïtien. Nous croyons en une Haïti où chaque 
+                        citoyen a accès à l'éducation, aux soins de santé, au travail et à la justice.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Notre Plateforme Politique</h2>
+                    <div class="platform-grid">
+                        <div class="platform-card">
+                            <h3>Éducation pour Tous</h3>
+                            <p>Un système éducatif public solide, gratuit et accessible à tous les enfants haïtiens.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Soins de Santé Universels</h3>
+                            <p>Accès à des soins de santé de qualité, abordables et disponibles dans tout le pays.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Développement Économique</h3>
+                            <p>Créer des emplois, soutenir les entrepreneurs locaux, développer l'agriculture et l'industrie nationales.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Justice et Sécurité</h3>
+                            <p>Un système judiciaire indépendant, transparent, et une force de sécurité respectueuse des droits humains.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Environnement Durable</h3>
+                            <p>Protéger les richesses naturelles d'Haïti, combattre la déforestation, promouvoir l'énergie propre.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Paix et Unité</h3>
+                            <p>Construire une société où tous les Haïtiens peuvent vivre ensemble dans le respect et la dignité.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section leadership">
+                <div class="container">
+                    <h2 class="section-title">Notre Équipe Dirigeante</h2>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <h4>Jean Jacques Clark Parent</h4>
+                            <p>Fondateur et Président</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Claire Lydie Parent</h4>
+                            <p>Vice-Présidente</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Sandina Parent</h4>
+                            <p>Secrétaire</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Carlos Joseph</h4>
+                            <p>Secrétaire Adjoint</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Eng. Eric Clac Louis</h4>
+                            <p>Questeur</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Contactez-nous</h2>
+                    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                            Nous voulons entendre votre voix. Rejoignez le mouvement dès aujourd'hui!
+                        </p>
+                        <p><strong>Adresse:</strong><br>
+                        4 Rue Canova Parent, Route de Marlique<br>
+                        Pétion-Ville, Haïti</p>
+                        <p style="margin-top: 1rem;">
+                            <strong>Téléphone:</strong><br>
+                            +509 3775-9653 | +509 3946-3912 | +509 4393-9918
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            <strong>Email:</strong><br>
+                            <a href="mailto:info@pademh.org" style="color: var(--gold);">info@pademh.org</a><br>
+                            <a href="mailto:contact@pademh.org" style="color: var(--gold);">contact@pademh.org</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ENGLISH VERSION -->
+        <div class="lang-content" id="content-en">
+            <section class="hero">
+                <div class="container">
+                    <h2>Together for a Stronger Haiti</h2>
+                    <p>Building a more just, prosperous, and united nation through unity, peace, and progress</p>
+                    <a href="#contact" class="cta-button">Join the Movement</a>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">About PADEMH</h2>
+                    <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+                        The Haitian Democratic Party (PADEMH) is a center-left political party committed to the 
+                        moral upliftment and well-being of the Haitian people. We believe in a Haiti where every 
+                        citizen has access to education, healthcare, employment, and justice.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Our Political Platform</h2>
+                    <div class="platform-grid">
+                        <div class="platform-card">
+                            <h3>Education for All</h3>
+                            <p>A strong public education system, free and accessible to all Haitian children.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Universal Healthcare</h3>
+                            <p>Access to quality, affordable healthcare available throughout the country.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Economic Development</h3>
+                            <p>Create jobs, support local entrepreneurs, develop national agriculture and industry.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Justice and Security</h3>
+                            <p>An independent, transparent judicial system and a security force that respects human rights.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Sustainable Environment</h3>
+                            <p>Protect Haiti's natural wealth, combat deforestation, promote clean energy.</p>
+                        </div>
+                        <div class="platform-card">
+                            <h3>Peace and Unity</h3>
+                            <p>Build a society where all Haitians can live together with respect and dignity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section leadership">
+                <div class="container">
+                    <h2 class="section-title">Our Leadership Team</h2>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <h4>Jean Jacques Clark Parent</h4>
+                            <p>Founder and President</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Claire Lydie Parent</h4>
+                            <p>Vice President</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Sandina Parent</h4>
+                            <p>Secretary</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Carlos Joseph</h4>
+                            <p>Assistant Secretary</p>
+                        </div>
+                        <div class="team-card">
+                            <h4>Eng. Eric Clac Louis</h4>
+                            <p>Treasurer</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Contact Us</h2>
+                    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                            We want to hear your voice. Join the movement today!
+                        </p>
+                        <p><strong>Address:</strong><br>
+                        4 Rue Canova Parent, Route de Marlique<br>
+                        Pétion-Ville, Haiti</p>
+                        <p style="margin-top: 1rem;">
+                            <strong>Phone:</strong><br>
+                            +509 3775-9653 | +509 3946-3912 | +509 4393-9918
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            <strong>Email:</strong><br>
+                            <a href="mailto:info@pademh.org" style="color: var(--gold);">info@pademh.org</a><br>
+                            <a href="mailto:contact@pademh.org" style="color: var(--gold);">contact@pademh.org</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>PADEMH</h3>
+                    <p>Parti Démocrate Haïtien</p>
+                    <p style="font-style: italic; color: var(--gold);">Unité · Paix · Progrès</p>
+                </div>
+                <div>
+                    <h3 class="footer-contact">Kontak</h3>
+                    <p>4 Rue Canova Parent<br>
+                    Route de Marlique<br>
+                    Pétion-Ville, Ayiti</p>
+                </div>
+                <div>
+                    <h3 class="footer-connect">Konekte</h3>
+                    <p>info@pademh.org<br>
+                    contact@pademh.org<br>
+                    secretariat@pademh.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PADEMH - Parti Démocrate Haïtien. Tout dwa rezève.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            const translations = {
+                'ht': {
+                    'nav-home': 'Akèy',
+                    'nav-about': 'Konsènan',
+                    'nav-platform': 'Platfòm',
+                    'nav-leadership': 'Dirijan',
+                    'nav-contact': 'Kontak',
+                    'footer-contact': 'Kontak',
+                    'footer-connect': 'Konekte'
+                },
+                'fr': {
+                    'nav-home': 'Accueil',
+                    'nav-about': 'À propos',
+                    'nav-platform': 'Plateforme',
+                    'nav-leadership': 'Direction',
+                    'nav-contact': 'Contact',
+                    'footer-contact': 'Contact',
+                    'footer-connect': 'Connectez'
+                },
+                'en': {
+                    'nav-home': 'Home',
+                    'nav-about': 'About',
+                    'nav-platform': 'Platform',
+                    'nav-leadership': 'Leadership',
+                    'nav-contact': 'Contact',
+                    'footer-contact': 'Contact',
+                    'footer-connect': 'Connect'
+                }
+            };
+            
+            Object.keys(translations[lang]).forEach(key => {
+                const element = document.querySelector('.' + key);
+                if (element) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
